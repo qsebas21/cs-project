@@ -1,18 +1,27 @@
 # Docking
+## Development container
 run
 ```
-$ sudo docker build -t ubuntu_mandelbrot .
+$ sudo docker build -f Dockerfile.dev -t ubuntu_mandel_dev .
 ```
- in the directory `/cs-project/` to build the docker image.
+ in the directory `/cs-project` to build the docker image.
 
-run 
+run with docker volume
 ```
-$ sudo docker run -it --rm ubuntu_mandelbrot
-``` 
-to run the docker image. 
+sudo docker run -it -v $HOME/cs-project/project/:/workspace ubuntu_mandel_dev
+```
 
-The directoy `/project` is copied into the docker. 
+The directoy `/cs-project/project` is mounted into the docker at `/workspace`. 
 
+## Production container
+run
+```
+$ sudo docker build -f Dockerfile.prod -t ubuntu_mandel_prod .
+```
+run with docker volume
+```
+sudo docker run -it -v $HOME/cs-project/project/:/workspace ubuntu_mandel_prod
+```
 # CMake
 All `make` commands must be run inside the docker in the directory `/project` 
 

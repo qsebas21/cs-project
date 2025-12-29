@@ -49,7 +49,7 @@ int main()
 
 
   // TODO: change loop values 
-  for (int i = 1; i < 800; i += 50)
+  for (int i = 1; i < 800; i += 5)
   {                                                         // for loop for different grain sizes
     auto start = std::chrono::high_resolution_clock::now(); // start time measurement
 

@@ -1,0 +1,20 @@
+FROM ubuntu:24.04
+
+# Avoid interactive tzdata prompts
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install build tools and dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    git \
+    libsfml-dev \
+    libtbb-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory (not sure)
+WORKDIR /workspace
+
+# Default command: run the executable
+CMD ["/bin/bash"]
+
