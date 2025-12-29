@@ -1,29 +1,28 @@
-# Computation of the Mandelbrot set
-
-This directory contains the sequential computation of the Mandelbrot set and
-represents the starting point for the exam project. The output of the program is
-a PNG image of the set.
-
-## Dependencies
-
-The program requires SFML and, for the parallel version, oneAPI Threading
-Building Blocks (oneTBB), besides the usual compiler and build tools. Both are
-available as Ubuntu packages. To install them:
-
-```shell
-sudo apt install libsfml-dev libtbb-dev
+# Docking
+run
 ```
+$ sudo docker build -t ubuntu_mandelbrot .
+```
+ in the directory `/cs-project/` to build the docker image.
 
-## Build
+run 
+```
+$ sudo docker run -it --rm ubuntu_mandelbrot
+``` 
+to run the docker image. 
 
-To build the program in both Debug and Release mode, follow the instructions given in [`code/README.md`](../code/README.md).
+The directoy `/project` is copied into the docker. 
 
-## Run
+# CMake
+All `make` commands must be run inside the docker in the directory `/project` 
 
-To run the program: _build-dir_`/mandelbrot`
-
-where _build-dir_ is the CMake binary directory, chosen during the configuration step.
-
-The program produces a PNG file called `mandelbrot.png` in the current directoy.
-
-![Mandelbrot set](mandelbrot.png)
+run 
+```
+cmake -S . -B build-d -DCMAKE_BUILD_TYPE=Debug
+cmake --build build-d
+```
+or
+```
+cmake -S . -B build-o -DCMAKE_BUILD_TYPE=Release
+cmake --build build-o
+```
