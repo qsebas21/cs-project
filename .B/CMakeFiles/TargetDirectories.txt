@@ -1,0 +1,3 @@
+/home/seb/Documents/IMAPP/3. UNIBO/Computer Science/cshep2025/project/.B/CMakeFiles/mandelbrot_par.dir
+/home/seb/Documents/IMAPP/3. UNIBO/Computer Science/cshep2025/project/.B/CMakeFiles/edit_cache.dir
+/home/seb/Documents/IMAPP/3. UNIBO/Computer Science/cshep2025/project/.B/CMakeFiles/rebuild_cache.dir
