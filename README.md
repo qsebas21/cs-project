@@ -2,7 +2,7 @@
 ## Development container
 run
 ```
-$ sudo docker build -f Dockerfile.dev -t ubuntu_mandel_dev .
+sudo docker build -f Dockerfile.dev -t ubuntu_mandel_dev .
 ```
  in the directory `/cs-project` to build the docker image.
 
@@ -10,17 +10,24 @@ run with docker volume
 ```
 sudo docker run -it -v $HOME/cs-project/project/:/workspace ubuntu_mandel_dev
 ```
-
+or inside the VM instance
+```
+sudo docker run -it -v $HOME/containers/IMAPP25/:/workspace ubuntu_mandel_dev
+```
 The directoy `/cs-project/project` is mounted into the docker at `/workspace`. 
 
 ## Production container
 run
 ```
-$ sudo docker build -f Dockerfile.prod -t ubuntu_mandel_prod .
+sudo docker build -f Dockerfile.prod -t ubuntu_mandel_prod .
 ```
 run with docker volume
 ```
 sudo docker run -it -v $HOME/cs-project/project/:/workspace ubuntu_mandel_prod
+```
+or 
+```
+sudo docker run -it -v $HOME/containers/IMAPP25/:/workspace ubuntu_mandel_prod
 ```
 # CMake
 All `make` commands must be run inside the docker in the directory `/project` 

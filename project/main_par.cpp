@@ -48,8 +48,8 @@ int main()
   file << "Grain size \t\t  t (us)" << std::endl;
 
 
-  // TODO: change loop values 
-  for (int i = 1; i < 800; i += 5)
+
+  for (int i = 1; i <= 800; i *= 2)
   {                                                         // for loop for different grain sizes
     auto start = std::chrono::high_resolution_clock::now(); // start time measurement
 
